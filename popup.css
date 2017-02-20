@@ -1,5 +1,5 @@
 body {
-  background: url("chalkboard.jpg") no-repeat;
+  background: url("chalkboard.jpg") repeat-y;
 }
 
 .container {
