@@ -2,12 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   chrome.tabs.query({ currentWindow: true, active: true }, tabs => {
-    if (tabs[0].url.match(/(?!:http|https):\/\/www\.upwork\.com/)) {
+    const [tab] = tabs;
+    if (tab.url.match(/(?!:http|https):\/\/www\.upwork\.com/)) {
       chrome.runtime.getBackgroundPage(bg => {
-        const { data } = bg;
+        const data = bg.data[tab.id];
         const { profileSettings } = data;
         const { profile } = profileSettings;
-        document.getElementById('user_portrait').src = profile.profile.portrait.originalPortrait;
+        const { portrait } = profile.profile;
+        document.getElementById('user_portrait').src = portrait.originalPortrait || portrait.bigPortrait;
         document.getElementById('overview_text').innerHTML = profile.profile.description;
       });
     } else {
