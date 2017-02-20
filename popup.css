@@ -1,0 +1,27 @@
+body {
+  background: url("chalkboard.jpg") no-repeat;
+}
+
+.container {
+  color: rgba(255, 255, 255, .9);
+  font-family: "Chalkduster", "Baskerville";
+  font-size: 18px;
+  padding: 0 10px;
+  width: 600px;
+}
+
+#user_portrait {
+  border-radius: 13px;
+  border: 3px solid rgba(255, 255, 255, .9);
+  float: left;
+  margin: 0 20px 0 0;
+  max-height: 300px;
+  max-width: 300px;
+}
+
+#overview_text {
+  letter-spacing: 1px;
+  line-height: 1.3rem;
+  padding: 0 0 0 10px;
+  white-space: pre-line;
+}
